@@ -27,78 +27,80 @@
   <body>
     <div class="container-narrow">
 
-    <hr>
+      <hr>
 
-    <div class="jumbotron">
-      <h1>Viewportmarklet</h1>
+      <div class="jumbotron">
+        <h1>Viewportmarklet</h1>
 
-      <p class="lead">
-        Finally, a quick way to see your current viewport width in px and em.
-      </p>
-      <p class="lead">
-        I've added <a href="js/viewport_bookmarklet.js">the bookmarklet's code to this page</a> so it shows you the current width, but to use it on your own projects you can drag this to your bookmarks bar<br /><br >
-        <a class="btn btn-large btn-primary" href="javascript:var%20attemptCount=0;if(typeof%20jQuery==%27undefined%27){(function(d,t){var%20q=d.createElement(t),s=d.getElementsByTagName(t)[0];q.src=location.protocol+%27//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js%27;s.parentNode.insertBefore(q,s)}(document,%27script%27));}function%20init(){if(arguments.callee.done)return;var%20j=jQuery.noConflict();function%20toEm(value){var%20that=parseInt(value,10),scopeTest=j(%27<div%20style=%22display:%20none;%20font-size:%201em;%20margin:%200;%20padding:0;%20height:%20auto;%20line-height:%201;%20border:0;%22>&nbsp;</div>%27).appendTo(%27body%27),scopeVal=scopeTest.height();scopeTest.remove();return(that/scopeVal).toFixed(2)+%27em%27;};j(%27body%27).append(%27<div%20style=%22position:fixed;top:5px;left:5px;font-family:courier,monospace;font-size:11px;color:#fff;border:1px%20solid%20#f89406;background:#f89406;padding:%202px%206px;%22%20id=%22viewportwidth%22></div>%27);j(window).resize(function(){j(%27#viewportwidth%27).html(j(window).width()+%27px%20/%20%27+toEm(j(window).width()));});j(window).resize();}function%20waitForJQuery(){attemptCount++;if(typeof%20jQuery!=%27undefined%27){init();return;}if(attemptCount<100){setTimeout(waitForJQuery,100);}return;}if(document.addEventListener){document.addEventListener(%27DOMContentLoaded%27,init,false);}else%20if(document.attachEvent){waitForJQuery();}waitForJQuery();window.onload=init;">Viewportmarklet</a>
-        or <a class="btn btn-large download" href="https://github.com/roelven/viewportmarklet/archive/master.zip">Download</a>
-      </p>
+        <p class="lead">
+          Finally, a quick way to see your current viewport width in px and em.
+        </p>
+        <p class="lead">
+          I've added <a href="js/viewport_bookmarklet.js">the bookmarklet's code to this page</a> so it shows you the current width, but to use it on your own projects you can drag this to your bookmarks bar<br /><br >
+          <a class="btn btn-large btn-primary" href="javascript:var%20attemptCount=0;if(typeof%20jQuery==%27undefined%27){(function(d,t){var%20q=d.createElement(t),s=d.getElementsByTagName(t)[0];q.src=location.protocol+%27//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js%27;s.parentNode.insertBefore(q,s)}(document,%27script%27));}function%20init(){if(arguments.callee.done)return;var%20j=jQuery.noConflict();function%20toEm(value){var%20that=parseInt(value,10),scopeTest=j(%27<div%20style=%22display:%20none;%20font-size:%201em;%20margin:%200;%20padding:0;%20height:%20auto;%20line-height:%201;%20border:0;%22>&nbsp;</div>%27).appendTo(%27body%27),scopeVal=scopeTest.height();scopeTest.remove();return(that/scopeVal).toFixed(2)+%27em%27;};j(%27body%27).append(%27<div%20style=%22position:fixed;top:5px;left:5px;font-family:courier,monospace;font-size:11px;color:#fff;border:1px%20solid%20#f89406;background:#f89406;padding:%202px%206px;%22%20id=%22viewportwidth%22></div>%27);j(window).resize(function(){j(%27#viewportwidth%27).html(j(window).width()+%27px%20/%20%27+toEm(j(window).width()));});j(window).resize();}function%20waitForJQuery(){attemptCount++;if(typeof%20jQuery!=%27undefined%27){init();return;}if(attemptCount<100){setTimeout(waitForJQuery,100);}return;}if(document.addEventListener){document.addEventListener(%27DOMContentLoaded%27,init,false);}else%20if(document.attachEvent){waitForJQuery();}waitForJQuery();window.onload=init;">Viewportmarklet</a>
+          or <a class="btn btn-large download" href="https://github.com/roelven/viewportmarklet/archive/master.zip">Download</a>
+        </p>
 
-    </div>
+      </div>
 
-    <hr>
+      <hr>
 
-    <div class="row-fluid">
-      <h4>Intro</h4>
-      <p>
-        After finding myself struggling with the <code>em</code> and <code>px</code> ratio while working on a responsive website I set out to find a solution that would just work. 
-        <a href="http://stackoverflow.com/questions/10305993/jquery-javascript-convert-pixels-to-em-in-a-easy-way">Some folks are still in discussion if em and px should be converted at all</a> 
-        but I needed something now, also to help me understand the complications of using only <code>em</code> in your frontends.
-      </p>
-    </div>
+      <div class="row-fluid">
+        <h4>Intro</h4>
+        <p>
+          After finding myself struggling with the <code>em</code> and <code>px</code> ratio while working on a responsive website I set out to find a solution that would just work. 
+          <a href="http://stackoverflow.com/questions/10305993/jquery-javascript-convert-pixels-to-em-in-a-easy-way">Some folks are still in discussion if em and px should be converted at all</a> 
+          but I needed something now, also to help me understand the complications of using only <code>em</code> in your frontends.
+        </p>
+      </div>
 
-    <div class="row-fluid">
-      <h4>Em? Why is would you use em?</h4>
-      <p>
-        Please have a look at <a href="http://filamentgroup.com/lab/update_jquery_plugin_for_retaining_scalable_interfaces_with_pixel_to_em_con/">this article to get a better understanding of using relative units in your css</a>. To quote:
+      <div class="row-fluid">
+        <h4>Em? Why is would you use em?</h4>
+        <p>
+          Please have a look at <a href="http://filamentgroup.com/lab/update_jquery_plugin_for_retaining_scalable_interfaces_with_pixel_to_em_con/">this article to get a better understanding of using relative units in your css</a>. To quote:
+        </p>
         <blockquote>
           In brief, an em is a relative unit that is equivalent to the height of a font. Since most browsers' default font size is 16px, we can assume that 1em is equal to 16px; meaning that 12px is equal to 0.75em, and 10px type is equal to 0.625em. (...)
         </blockquote>
-      </p>
-      <p>
-        Some more useful articles:
+        <p>
+          Some more useful articles:
+          <ul>
+            <li><a href="http://alistapart.com/article/love-the-boring-bits-of-css">http://alistapart.com/article/love-the-boring-bits-of-css</a></li>
+            <li><a href="http://typophile.com/node/27742">http://typophile.com/node/27742</a>
+          </ul>
+        </p>
+      </div>
+
+      <div class="row-fluid">
+        <h4>Credits</h4>
+        <p>
+          This little project was inspired by the work of others:
+        </p>
         <ul>
-          <li><a href="http://alistapart.com/article/love-the-boring-bits-of-css">http://alistapart.com/article/love-the-boring-bits-of-css</a></li>
-          <li><a href="http://typophile.com/node/27742">http://typophile.com/node/27742</a>
+          <li><a href="https://gist.github.com/3060429">https://gist.github.com/3060429</a></li>
+          <li><a href="http://neighborhood.org/core/sample/jquery/append-to-head.htm">http://neighborhood.org/core/sample/jquery/append-to-head.htm</a></li>
+          <li><a href="https://github.com/arasbm/jQuery-Pixel-Em-Converter">https://github.com/arasbm/jQuery-Pixel-Em-Converter</a></li>
         </ul>
-      </p>
+      </div>
+
+      <div class="row-fluid">
+        <h4>Disclaimer</h4>
+        <p>
+          This code has been roughly tested by just me, it seemed to work and I'm using it on my own projects now. If you find any bugs or errors, fork away and help me improve my code. Thanks!
+        </p>
+      </div>
+
+      <hr>
+
+      <div class="row-fluid pagination-centered">
+        <p>
+          <a href="http://roelvanderven.com" rel="me author"><img src="img/roelvandervencom.png" width="50" height="50" alt="Roelvanderven.com" /></a>
+        </p>
+      </div>
+
+      <a href="https://github.com/roelven/viewportmarklet"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
     </div>
-
-    <div class="row-fluid">
-      <h4>Credits</h4>
-      <p>
-        This little project was inspired by the work of others:
-      </p>
-      <ul>
-        <li><a href="https://gist.github.com/3060429">https://gist.github.com/3060429</a></li>
-        <li><a href="http://neighborhood.org/core/sample/jquery/append-to-head.htm">http://neighborhood.org/core/sample/jquery/append-to-head.htm</a></li>
-        <li><a href="https://github.com/arasbm/jQuery-Pixel-Em-Converter">https://github.com/arasbm/jQuery-Pixel-Em-Converter</a></li>
-      </ul>
-    </div>
-
-    <div class="row-fluid">
-      <h4>Disclaimer</h4>
-      <p>
-        This code has been roughly tested by just me, it seemed to work and I'm using it on my own projects now. If you find any bugs or errors, fork away and help me improve my code. Thanks!
-      </p>
-    </div>
-
-    <hr>
-
-    <div class="row-fluid pagination-centered">
-      <p>
-        <a href="http://roelvanderven.com" rel="me author"><img src="img/roelvandervencom.png" width="50" height="50" alt="Roelvanderven.com" /></a>
-      </p>
-    </div>
-
-    <a href="https://github.com/roelven/viewportmarklet"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
 
     <script src="js/viewport_bookmarklet.js" defer></script>
 
