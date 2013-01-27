@@ -6,61 +6,26 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title></title>
-    <meta name="description" content="A bookmarklet to see your current page's width in pixels and em">
+
+    <title>Viewportmarklet. A bookmarklet to see your current viewport width in both px and em</title>
+
+    <meta name="description" content="A bookmarklet to see your current viewport width in both pixels and em">
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="css/bootstrap.css">
-    <style>
-    body {
-      padding-top: 20px;
-      padding-bottom: 40px;
-    }
 
-    /* Custom container */
-    .container-narrow {
-      margin: 0 auto;
-      max-width: 700px;
-    }
-    .container-narrow > hr {
-      margin: 30px 0;
-    }
+    <!--
 
-    /* Main marketing message and sign up button */
-    .jumbotron {
-      margin: 60px 0;
-      text-align: center;
-    }
-    .jumbotron h1 {
-      font-size: 72px;
-      line-height: 1;
-    }
-    .jumbotron .btn {
-      font-size: 21px;
-      padding: 14px 24px;
-    }
+      Yes, I shamelessly used Twitter Bootstrap for this page to look good.
+      I've used the marketing-narrow example which you can find here:
+      http://twitter.github.com/bootstrap/examples/marketing-narrow.html
 
-    /* Supporting marketing content */
-    .marketing {
-      margin: 60px 0;
-    }
-    .marketing p + h4 {
-      margin-top: 28px;
-    }
-    </style>
+    -->
+
   </head>
 
   <body>
     <div class="container-narrow">
-
-    <div class="masthead">
-      <ul class="nav nav-pills pull-right">
-        <li class="active"><a href="http://github.com/roelven" rel="me">Github</a></li>
-        <li><a href="http://twitter.com/roelven" rel="me">Twitter</a></li>
-        <li><a href="http://roelvanderven.com" rel="author me">Website</a></li>
-      </ul>
-      <h3 class="muted">&nbsp;</h3>
-    </div>
 
     <hr>
 
@@ -68,10 +33,15 @@
       <h1>Viewportmarklet</h1>
 
       <p class="lead">
-        View the full <a href="https://github.com/roelven/viewportmarklet">code on Github</a>,
+        Finally, a quick way to see your current viewport width in px and em.
       </p>
       <p class="lead">
-        Drag the following link to your bookmarks bar:<br /><br >
+        After finding myself struggling with the em and px ratio while working on a responsive website I set out to find a solution that would just work. 
+        <a href="http://stackoverflow.com/questions/10305993/jquery-javascript-convert-pixels-to-em-in-a-easy-way">Some folks are still in discussion if em and px should be converted at all</a> 
+        but I needed something to now, also to help me understand the complications of using only em in your frontends.
+      </p>
+      <p class="lead">
+        I've added <a href="">the bookmarklet's code to this page</a> so it shows you the current width, but to use it on your own projects you can drag this to your bookmarks bar<br /><br >
         <a class="btn btn-large btn-primary" href="javascript:var%20attemptCount=0;if(typeof%20jQuery==%27undefined%27){(function(d,t){var%20q=d.createElement(t),s=d.getElementsByTagName(t)[0];q.src=location.protocol+%27//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js%27;s.parentNode.insertBefore(q,s)}(document,%27script%27));}function%20init(){if(arguments.callee.done)return;var%20j=jQuery.noConflict();function%20toEm(value){var%20that=parseInt(value,10),scopeTest=j(%27<div%20style=%22display:%20none;%20font-size:%201em;%20margin:%200;%20padding:0;%20height:%20auto;%20line-height:%201;%20border:0;%22>&nbsp;</div>%27).appendTo(%27body%27),scopeVal=scopeTest.height();scopeTest.remove();return(that/scopeVal).toFixed(2)+%27em%27;};j(%27body%27).append(%27<div%20style=%22position:fixed;top:5px;left:5px;font-family:courier,monospace;font-size:11px;color:#fff;border:1px%20solid%20#0088cc;background:#0088cc;padding:4px;%22%20id=%22viewportwidth%22></div>%27);j(window).resize(function(){j(%27#viewportwidth%27).html(j(window).width()+%27px%20/%20%27+toEm(j(window).width()));});j(window).resize();}function%20waitForJQuery(){attemptCount++;if(typeof%20jQuery!=%27undefined%27){init();return;}if(attemptCount<100){setTimeout(waitForJQuery,100);}return;}if(document.addEventListener){document.addEventListener(%27DOMContentLoaded%27,init,false);}else%20if(document.attachEvent){waitForJQuery();}waitForJQuery();window.onload=init;">Viewportmarklet</a>
         or <a class="btn btn-large download" href="https://github.com/roelven/viewportmarklet/archive/master.zip">Download</a>
       </p>
