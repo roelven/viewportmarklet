@@ -38,10 +38,10 @@
       <p class="lead">
         After finding myself struggling with the em and px ratio while working on a responsive website I set out to find a solution that would just work. 
         <a href="http://stackoverflow.com/questions/10305993/jquery-javascript-convert-pixels-to-em-in-a-easy-way">Some folks are still in discussion if em and px should be converted at all</a> 
-        but I needed something to now, also to help me understand the complications of using only em in your frontends.
+        but I needed something now, also to help me understand the complications of using only em in your frontends.
       </p>
       <p class="lead">
-        I've added <a href="">the bookmarklet's code to this page</a> so it shows you the current width, but to use it on your own projects you can drag this to your bookmarks bar<br /><br >
+        I've added <a href="js/viewport_bookmarklet.js">the bookmarklet's code to this page</a> so it shows you the current width, but to use it on your own projects you can drag this to your bookmarks bar<br /><br >
         <a class="btn btn-large btn-primary" href="javascript:var%20attemptCount=0;if(typeof%20jQuery==%27undefined%27){(function(d,t){var%20q=d.createElement(t),s=d.getElementsByTagName(t)[0];q.src=location.protocol+%27//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js%27;s.parentNode.insertBefore(q,s)}(document,%27script%27));}function%20init(){if(arguments.callee.done)return;var%20j=jQuery.noConflict();function%20toEm(value){var%20that=parseInt(value,10),scopeTest=j(%27<div%20style=%22display:%20none;%20font-size:%201em;%20margin:%200;%20padding:0;%20height:%20auto;%20line-height:%201;%20border:0;%22>&nbsp;</div>%27).appendTo(%27body%27),scopeVal=scopeTest.height();scopeTest.remove();return(that/scopeVal).toFixed(2)+%27em%27;};j(%27body%27).append(%27<div%20style=%22position:fixed;top:5px;left:5px;font-family:courier,monospace;font-size:11px;color:#fff;border:1px%20solid%20#0088cc;background:#0088cc;padding:4px;%22%20id=%22viewportwidth%22></div>%27);j(window).resize(function(){j(%27#viewportwidth%27).html(j(window).width()+%27px%20/%20%27+toEm(j(window).width()));});j(window).resize();}function%20waitForJQuery(){attemptCount++;if(typeof%20jQuery!=%27undefined%27){init();return;}if(attemptCount<100){setTimeout(waitForJQuery,100);}return;}if(document.addEventListener){document.addEventListener(%27DOMContentLoaded%27,init,false);}else%20if(document.attachEvent){waitForJQuery();}waitForJQuery();window.onload=init;">Viewportmarklet</a>
         or <a class="btn btn-large download" href="https://github.com/roelven/viewportmarklet/archive/master.zip">Download</a>
       </p>
@@ -59,8 +59,17 @@
         <li><a href="https://gist.github.com/3060429">https://gist.github.com/3060429</a></li>
         <li><a href="http://neighborhood.org/core/sample/jquery/append-to-head.htm">http://neighborhood.org/core/sample/jquery/append-to-head.htm</a></li>
         <li><a href="https://github.com/arasbm/jQuery-Pixel-Em-Converter">https://github.com/arasbm/jQuery-Pixel-Em-Converter</a></li>
+      </ul>
     </div>
+
+    <hr>
+
+    <div class="row-fluid pagination-centered">
+      <a href="http://roelvanderven.com" rel="me author"><img src="img/roelvandervencom.png" width="50" height="50" alt="Roelvanderven.com" /></a>
+    </div>
+
     <script src="js/viewport_bookmarklet.js" defer></script>
+
   </body>
 
 </html>
