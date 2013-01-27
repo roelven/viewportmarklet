@@ -31,7 +31,7 @@ function init() {
   };
 
   // Add div to <body>
-  j('body').append('<div style="position:fixed;top:5px;left:5px;font-family:courier,monospace;font-size:11px;color:#fff;border:1px solid #f89406;background:#f89406;padding: 2px 6px;" id="viewportwidth"></div>');
+  j('body').append('<div style="position:fixed;top:5px;left:5px;margin-right:5px;font-family:courier,monospace;font-size:12px;color:#fff;border:1px solid #f89406;background:#f89406;padding: 2px 6px;" id="viewportwidth"></div>');
   j(window).resize(function() {
     j('#viewportwidth').html(j(window).width() + 'px / ' + toEm(j(window).width()));
   });
